@@ -1,4 +1,4 @@
-/* Global Styles */
+/* CSS - Optimized for Full Screen ChromeOS Flex */
 * {
     box-sizing: border-box;
 }
@@ -15,39 +15,47 @@ body {
     display: flex;
     flex-direction: column; 
     background-color: #f0f2f5;
-    position: relative;
 }
 
-/* Watermark Styles */
-.watermark {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    width: 60px;
+/* Stiker Logo Tetap (Fixed) */
+.logo-container {
+    position: fixed; 
+    top: 0.5cm;
+    left: 0.5cm;
+    z-index: 2000; 
+    transition: transform 0.4s ease-in-out;
+}
+
+.logo-container:hover {
+    transform: translateX(20px);
+}
+
+.logo-container img {
+    width: 85px; 
     height: auto;
-    opacity: 0.25;
-    z-index: 2000;
-    pointer-events: none;
-    filter: grayscale(100%);
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    display: block;
+    cursor: pointer;
 }
 
-/* Header */
 header { 
     background: #c0392b; 
     color: white; 
-    padding: 3rem 2rem; 
+    padding: 4rem 2rem 3rem 2rem; 
     text-align: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 header h1 {
-    font-family: 'Stardos Stencil', serif;
-    font-weight: 700;
+    font-family: 'Stencil', 'Rockwell Extra Bold', 'Courier New', serif;
     font-size: 3.125rem;
     margin: 0;
+    letter-spacing: 2px;
 }
 
-/* Navigation */
 nav { 
     background: #962d22; 
     color: white; 
@@ -68,10 +76,9 @@ nav a {
 }
 
 nav a:hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-/* Content Container */
 .container { 
     padding: 40px 20px; 
     max-width: 1200px; 
@@ -81,21 +88,14 @@ nav a:hover {
 }
 
 h2 {
-    font-family: 'Stardos Stencil', serif;
+    font-family: 'Stencil', 'Rockwell Extra Bold', 'Courier New', serif;
     text-align: center;
     font-size: 3.125rem;
     color: #2c3e50;
     margin-bottom: 30px;
+    letter-spacing: 1px;
 }
 
-.about-text {
-    text-align: center; 
-    max-width: 800px; 
-    margin: 0 auto 40px auto; 
-    font-size: 1.1rem;
-}
-
-/* Grid & Cards */
 .grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -110,20 +110,20 @@ h2 {
     text-align: center; 
     background: white; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .card h3 { 
     color: #c0392b; 
-    font-size: 1.5rem;
+    font-size: 1.5rem; 
     margin-bottom: 15px;
 }
 
-/* Footer */
 footer { 
     text-align: center; 
     padding: 25px; 
@@ -131,4 +131,14 @@ footer {
     color: #333; 
     width: 100%;
     border-top: 1px solid #ddd;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    .logo-container {
+        top: 0.3cm;
+        left: 0.3cm;
+    }
+    .logo-container img { width: 65px; }
+    header h1 { font-size: 2.5rem; }
 }
