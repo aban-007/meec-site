@@ -17,12 +17,12 @@ body {
     background-color: #f0f2f5;
 }
 
-/* Stiker Logo Tetap (Fixed) */
+/* Fixed MEEC Logo */
 .logo-container {
-    position: fixed; 
+    position: fixed;
     top: 0.5cm;
     left: 0.5cm;
-    z-index: 2000; 
+    z-index: 2000;
     transition: transform 0.4s ease-in-out;
 }
 
@@ -41,9 +41,28 @@ body {
     cursor: pointer;
 }
 
+/* WhatsApp Logo - Bottom Right 10mm */
+.whatsapp-float {
+    position: fixed;
+    bottom: 10mm;
+    right: 10mm;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    display: block;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
 header { 
     background: #c0392b; 
-    color: white; 
+    color: #ffff00; 
     padding: 4rem 2rem 3rem 2rem; 
     text-align: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -91,7 +110,7 @@ h2 {
     font-family: 'Stencil', 'Rockwell Extra Bold', 'Courier New', serif;
     text-align: center;
     font-size: 3.125rem;
-    color: #2c3e50;
+    color: #0000FF; 
     margin-bottom: 30px;
     letter-spacing: 1px;
 }
@@ -133,7 +152,6 @@ footer {
     border-top: 1px solid #ddd;
 }
 
-/* Responsif untuk layar kecil */
 @media (max-width: 600px) {
     .logo-container {
         top: 0.3cm;
@@ -141,4 +159,5 @@ footer {
     }
     .logo-container img { width: 65px; }
     header h1 { font-size: 2.5rem; }
+    .whatsapp-float img { width: 50px; height: 50px; }
 }
